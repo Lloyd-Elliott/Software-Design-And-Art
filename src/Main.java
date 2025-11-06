@@ -2,14 +2,37 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        Red red = new Red();
+        Blue blue = new Blue();
+        final int[] shakes = new int[]{12, 12, 7, 8};
+        int turns = 0;
+        int redTurns = 0;
+        int blueTurns = 0;
+
+        System.out.format("Red:%s Blue:%s %n", red.getPositionAsString(), blue.getPositionAsString());
+        while (!red.isAtEnd() & !blue.isAtEnd()) {
+            int shake = shakes[turns++];
+            if (turns % 2 == 1) {
+                redTurns++;
+                System.out.format("Red play %d rolls %d%n", redTurns, shake);
+                String start = red.getPositionAsString();
+                red.advance(shake);
+                System.out.format("Red moves from %s to %s%n", start, red.getPositionAsString());
+            } else {
+                blueTurns++;
+                System.out.format("Blue play %d rolls %d%n", blueTurns, shake);
+                String start = blue.getPositionAsString();
+                blue.advance(shake);
+                System.out.format("Blue moves from %s to %s%n", start, blue.getPositionAsString());
+            }
         }
+        if (red.isAtEnd()) {
+            System.out.format("Red wins in %d moves%n", redTurns);
+        } else {
+            System.out.format("BLue wins in %d moves%n", blueTurns);
+        }
+        System.out.format("Total plays %d%n", turns);
+
     }
 }
