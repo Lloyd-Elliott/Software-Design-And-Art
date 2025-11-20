@@ -46,4 +46,5 @@ public class Red {
             currentIndex = END_OF_TAIL_INDEX;
         }
     }
+
 }

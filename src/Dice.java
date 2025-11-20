@@ -2,14 +2,15 @@ import java.util.Random;
 
 public class Dice {
 
-    private int sides;
-    private int numberOfDice;
-    private Random random;
+    private DiceRollStratergy diceRollStratergy;
 
+    public Dice(DiceRollStratergy diceRollStratergy) {
+        this.diceRollStratergy = diceRollStratergy;
+        }
 
-    public Dice(int sides, int numberOfDice, Random random) {
-        this.sides = sides;
-        this.numberOfDice = numberOfDice;
-        this.random = random;
+        public int roll() {
+            return diceRollStratergy.rollDice();
+        }
+
     }
-}
+
