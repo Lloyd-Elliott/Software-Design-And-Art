@@ -1,6 +1,7 @@
 import java.util.Random;
 
 public class OneDiceStratergy implements DiceRollStratergy{
+    //    commit
 
     private int sides = 6;
     private final Random random;

@@ -2,6 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        //    commit
         Dice dice = new Dice(new OneDiceStratergy());
         Game game = new Game(dice, new Board(), new Rules());
 
