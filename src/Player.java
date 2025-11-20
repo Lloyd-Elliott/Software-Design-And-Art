@@ -1,10 +1,19 @@
 public class Player {
     int startingPostion = 0;
     int endingPosition = 0;
+    int turns = 0;
+    String name;
 
-    public Player(int startingPostion, int endingPosition) {
-        this.startingPostion = startingPostion;
-        this.endingPosition = endingPosition;
+    public Player(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getStartingPostion() {
@@ -21,6 +30,14 @@ public class Player {
 
     public void setEndingPosition(int endingPosition) {
         this.endingPosition = endingPosition;
+    }
+
+    public int getTurns() {
+        return turns;
+    }
+
+    public void setTurns(int turns) {
+        this.turns = turns;
     }
 
     public void move(){

@@ -5,10 +5,18 @@ public class Main {
         //    commit
         Dice dice = new Dice(new OneDiceStratergy());
         Board board = new Board(new SmallBoard());
-        Game game = new Game(dice, board, new Rules());
+        Dice dice2 = new Dice(new TwoDiceStratergy());
 
-        GamePlay gamePlay = new GamePlay(game);
-        gamePlay.playGame();
+        Game game = new Game(dice2, board, new Rules());
+        Game game2 = new Game(dice, board, new Rules());
+
+
+//        GamePlay gamePlay = new GamePlay(game);
+//        gamePlay.playGame();
+
+        GamePlay gamePlay2 = new GamePlay(game2);
+
+        gamePlay2.playGame();
 
 //        Red red = new Red();
 //        Blue blue = new Blue();

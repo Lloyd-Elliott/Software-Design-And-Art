@@ -1,12 +1,21 @@
 public class Board {
     private BoardStratergy boardStratergy;
 
+
     public Board(BoardStratergy boardStratergy){
         this.boardStratergy = boardStratergy;
     }
-    public void movePlayer(int steps) {
-        System.out.println("Moving player by " + steps + " steps.");
 
+    public void setupBoard(){
+        boardStratergy.setupBoard();
+    }
+    public void movePlayer(int steps) {
+        boardStratergy.movePlayer(steps);
 
     }
+
+    public boolean hasWinner(){
+        return boardStratergy.hasWinner();
+    }
+
 }
