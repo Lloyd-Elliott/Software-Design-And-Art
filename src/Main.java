@@ -4,10 +4,19 @@ public class Main {
     public static void main(String[] args) {
         //    commit
         Dice dice = new Dice(new OneDiceStratergy());
-        Game game = new Game(dice, new Board(), new Rules());
+        Board board = new Board(new SmallBoard());
+        Dice dice2 = new Dice(new TwoDiceStratergy());
 
-        GamePlay gamePlay = new GamePlay(game);
-        gamePlay.playGame();
+        Game game = new Game(dice2, board, new Rules());
+        Game game2 = new Game(dice, board, new Rules());
+
+
+//        GamePlay gamePlay = new GamePlay(game);
+//        gamePlay.playGame();
+
+        GamePlay gamePlay2 = new GamePlay(game2);
+
+        gamePlay2.playGame();
 
 //        Red red = new Red();
 //        Blue blue = new Blue();

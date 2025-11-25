@@ -1,9 +1,21 @@
 public class Board {
+    private BoardStratergy boardStratergy;
 
-    //    commit
+
+    public Board(BoardStratergy boardStratergy){
+        this.boardStratergy = boardStratergy;
+    }
+
+    public void setupBoard(){
+        boardStratergy.setupBoard();
+    }
     public void movePlayer(int steps) {
-        System.out.println("Moving player by " + steps + " steps.");
-
+        boardStratergy.movePlayer(steps);
 
     }
+
+    public boolean hasWinner(){
+        return boardStratergy.hasWinner();
+    }
+
 }
