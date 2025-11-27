@@ -1,5 +1,5 @@
 public class Player {
-    int startingPostion = 0;
+    int startingPosition = 0;
     int endingPosition = 0;
     int turns = 0;
     String name;
@@ -16,16 +16,16 @@ public class Player {
         this.name = name;
     }
 
-    public int getStartingPostion() {
-        return startingPostion;
+    public int getStartingPosition() {
+        return startingPosition;
     }
 
     public int getEndingPosition() {
         return endingPosition;
     }
 
-    public void setStartingPostion(int startingPostion) {
-        this.startingPostion = startingPostion;
+    public void setStartingPosition(int startingPosition) {
+        this.startingPosition = startingPosition;
     }
 
     public void setEndingPosition(int endingPosition) {
@@ -40,7 +40,4 @@ public class Player {
         this.turns = turns;
     }
 
-    public void move(){
-//        Some logic that takes position and moves it by number of dice
-    }
 }

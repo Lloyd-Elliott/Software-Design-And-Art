@@ -1,7 +1,14 @@
 public interface BoardStratergy {
-    //    commit
-
-    void movePlayer(int moves);
     void setupBoard();
+    void movePlayer(int moves);
     boolean hasWinner();
+
+    int getCurrentIndex1();
+    int getCurrentIndex2();
+    int getEndIndex1();
+    int getEndIndex2();
+    void setGameOver(boolean value);
+
+    void addObserver(BoardObserver obs);
+    void notifyObservers();
 }

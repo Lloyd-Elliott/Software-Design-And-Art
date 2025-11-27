@@ -1,53 +1,43 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //    commit
-        Dice dice = new Dice(new OneDiceStratergy());
-        Board board = new Board(new SmallBoard());
-        Dice dice2 = new Dice(new TwoDiceStratergy());
 
-        Game game = new Game(dice2, board, new Rules());
-        Game game2 = new Game(dice, board, new Rules());
+        // Choose any board type here:
+        BoardStratergy small = new SmallBoard();
+        // BoardStratergy medium = new MediumBoard();
+        // BoardStratergy large = new LargeBoard();
 
 
-//        GamePlay gamePlay = new GamePlay(game);
-//        gamePlay.playGame();
 
-        GamePlay gamePlay2 = new GamePlay(game2);
+        // Wrap the chosen board strategy inside Board
+        Board board = new Board(small);
 
-        gamePlay2.playGame();
+        // Rules apply to ANY board
+        Rules rules = new Rules(new BasicRulesStratergy(board));
 
-//        Red red = new Red();
-//        Blue blue = new Blue();
-//        final int[] shakes = new int[]{12, 12, 7, 8};
-//        int turns = 0;
-//        int redTurns = 0;
-//        int blueTurns = 0;
+        // Dice
+        Dice dice = new Dice(new TwoDiceStratergy());
+
+
+        // Create the game
+        Game game = new Game(dice, board, rules);
+
+        // Gameplay handler
+        GamePlay gameplay = new GamePlay(game);
+
+        // Start the game!
+        gameplay.playGame();
 //
-//        System.out.format("Red:%s Blue:%s %n", red.getPositionAsString(), blue.getPositionAsString());
-//        while (!red.isAtEnd() & !blue.isAtEnd()) {
-//            int shake = shakes[turns++];
-//            if (turns % 2 == 1) {
-//                redTurns++;
-//                System.out.format("Red play %d rolls %d%n", redTurns, shake);
-//                String start = red.getPositionAsString();
-//                red.advance(shake);
-//                System.out.format("Red moves from %s to %s%n", start, red.getPositionAsString());
-//            } else {
-//                blueTurns++;
-//                System.out.format("Blue play %d rolls %d%n", blueTurns, shake);
-//                String start = blue.getPositionAsString();
-//                blue.advance(shake);
-//                System.out.format("Blue moves from %s to %s%n", start, blue.getPositionAsString());
-//            }
-//        }
-//        if (red.isAtEnd()) {
-//            System.out.format("Red wins in %d moves%n", redTurns);
-//        } else {
-//            System.out.format("BLue wins in %d moves%n", blueTurns);
-//        }
-//        System.out.format("Total plays %d%n", turns);
-
+//        SmallBoard smallBoardStrategy = new SmallBoard();
+//        Board board2 = new Board(smallBoardStrategy);
+//
+//        Dice dice2 = new Dice(new OneDiceStratergy());
+//
+//
+//        Rules rules2 = new Rules(new EndRulesStratergy(board2));
+//
+//        Game game2 = new Game(dice2, board2, rules2);
+//        GamePlay play = new GamePlay(game2);
+//
+//        play.playGame();
     }
 }

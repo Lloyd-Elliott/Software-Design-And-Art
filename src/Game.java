@@ -1,5 +1,4 @@
 public class Game {
-    //    commit
     public Dice dice;
     public Board board;
     public Rules rules;
@@ -8,10 +7,9 @@ public class Game {
         this.dice = dice;
         this.board = board;
         this.rules = rules;
+
+        BoardObserver observer = new BoardObserver(board, rules);
+        board.addObserver(observer);
     }
-
-
-
-    void play() {}
-
 }
+
